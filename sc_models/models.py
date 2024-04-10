@@ -181,6 +181,8 @@ class SCTransformer(nn.Module):
                 self.dropout,
             )((x, None, mask), deterministic=not training)
 
+        self.sow("intermediates", "state", x[-self.n_add_tokens:])
+
         out = nn.Dense(self.n_out)(x[-self.n_add_tokens:])
         
         return out

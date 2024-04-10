@@ -26,6 +26,7 @@ def get_config():
     config.model.config = ml_collections.ConfigDict()
 
     config.model.embed = np.load("gene_embedding.npz")["data"]
+    config.train.freeze_embedding = True
 
     config.num_runs = 3
 

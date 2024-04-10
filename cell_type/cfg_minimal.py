@@ -26,7 +26,7 @@ def get_config():
     config.model.type = SCLinear
     config.model.config = ml_collections.ConfigDict()
     config.model.embed = np.random.normal(size=(21973, 256))
-    config.model.freeze_embed = True
+    config.model.freeze_embedding = True
 
     config.num_runs = 3
 

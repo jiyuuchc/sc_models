@@ -118,7 +118,7 @@ def get_ds(config):
         )    
         .repeat()
         .prefetch(1)
-    )    
+    ) 
 
     ds_val = (
         ds.enumerate()
@@ -156,7 +156,7 @@ def run(config, logpath, seed):
     lr = config.train.lr
     model = config.model.type(**config.model.config)
     balanced = config.train.get("balanced_loss", True)
-    freeze_embedding = config.model.get("freeze_embed", False)
+    freeze_embedding = config.train.get("freeze_embedding", False)
 
     trainer = Trainer(
         model = model,

@@ -27,7 +27,8 @@ def get_config():
     config.model.type = SCLinear
     config.model.config = ml_collections.ConfigDict()
     config.model.embed = embed
-    config.model.freeze_embed = True
+
+    config.train.freeze_embedding = True
 
     config.num_runs = 3
 
